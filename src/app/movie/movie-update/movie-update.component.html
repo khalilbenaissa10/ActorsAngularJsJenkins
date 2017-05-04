@@ -34,6 +34,9 @@
         <option *ngFor="let year of years" [value]="year">{{year}}</option>
   </select>
     </div >
+
+      <button type="submit" class="btn btn-success" [disabled]="!movieForm.form.valid">Submit</button>
+    </form>
     <div *ngIf="firstIf" >
     <h1> Actors : </h1>
     <h1>
@@ -58,8 +61,7 @@
         </ul>
     </h1>
     </div>
-      <button type="submit" class="btn btn-success" [disabled]="!movieForm.form.valid">Submit</button>
-    </form>
+    
       <simple-notifications [options]="options"></simple-notifications>
     
 </div>

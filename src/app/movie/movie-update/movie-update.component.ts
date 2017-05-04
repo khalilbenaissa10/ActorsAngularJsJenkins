@@ -85,9 +85,14 @@ export class MovieUpdateComponent implements OnInit {
 
   deleteActor(actor:Actor){
 console.log(actor);
-this.movieService.deleteActorFromMovie(actor.id,this.movie.id).then(()=> {
-            
+                 this._notificationsService.success(
+                    'Acteur '+actor.name+' supprimé avec succés',
+                    this.movie.title ,
+                     this.options);   
+                  this.movieService.deleteActorFromMovie(actor.id,this.movie.id).then(()=> {
+            setTimeout(() => {
              location.reload();
+             }, 3000) ;   
              
             }) ;
   }
@@ -98,19 +103,27 @@ this.movieService.deleteActorFromMovie(actor.id,this.movie.id).then(()=> {
            if((this.movie.actors[i].name).toString() == (actor.name).toString() ){
                console.log("hello") ; 
                this.j = i;
+               break;
                
                
            }
-           if(this.j != -1){
-              console.log(this.j);
-           }
+           
           
     } 
-    //this.movieService.addActorToMovie(this.movie.id,actor).then(()=> {
+
+    if(this.j != -1){
+              this._notificationsService.error(
+                    'L\'acteur '+actor.name+ ' appartient deja a ce film :',
+                  this.movie.title ,
+                     this.options);   
+                     this.j=-1;
+           }
+    else {this.movieService.addActorToMovie(this.movie.id,actor).then(()=> {
     
-          //   location.reload();
+             location.reload();
              
-         //   }) ;
+           }) ;
+    }
   }
 
 }
