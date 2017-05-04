@@ -1,0 +1,13 @@
+<popup (confirmClick)="deleteActor(movie)" #popup1>
+<h1> titre du film :{{movie?.title}} </h1>
+<h2>id du film : {{movie?.id}} </h2>
+<h2>date de sortie : {{movie?.year}}</h2>
+<h2>actors : </h2>
+        <h3>
+        <ul class="khalil">
+            <li class="w3-tag w3-grey w3-margin-bottom" template = "ngFor let actor of movie?.actors; let i = index">
+                  {{actor?.name}}
+            </li>
+        </ul>
+        </h3>
+</popup>
