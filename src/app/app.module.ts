@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {PopupModule} from 'ng2-opd-popup';
 import { SimpleNotificationsModule } from 'angular2-notifications';
+ import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -46,7 +47,8 @@ import { MovieUpdateComponent } from './movie/movie-update/movie-update.componen
     HttpModule,
     PopupModule.forRoot(),
     AppRoutingModule,
-     SimpleNotificationsModule.forRoot()
+     SimpleNotificationsModule.forRoot(),
+     Ng2AutoCompleteModule
     
   ],
   providers: [],

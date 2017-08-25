@@ -85,7 +85,7 @@ export class MovieUpdateComponent implements OnInit {
 
   deleteActor(actor:Actor){
 console.log(actor);
-                 this._notificationsService.alert(
+                 this._notificationsService.error(
                     'Acteur '+actor.name+' supprimé avec succés',
                     this.movie.title ,
                      this.options);   

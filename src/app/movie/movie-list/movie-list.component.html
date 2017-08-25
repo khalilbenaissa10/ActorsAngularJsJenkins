@@ -1,4 +1,14 @@
 <!-- First Photo Grid-->
+
+ 
+      <input [ngModel]="model"
+       ng2-auto-complete 
+      [source]="movies"
+      (valueChanged)="valueChanged($event)"
+      placeholder="enter text"
+       value-property-name="id"
+      display-property-name="title" />
+    
   <div class="w3-row-padding w3-padding-16 w3-center"  >
    <rb-movie-item *ngFor="let movie of movies" [movie]="movie" [detail]="detail"></rb-movie-item>
    
